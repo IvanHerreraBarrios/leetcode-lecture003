@@ -1,17 +1,16 @@
 /**
- * @param {number} num
+ * @param {number[]} arr
  * @return {number}
  */
-//let steps = 0
-// for (; num != 0; steps++)
- //num = 0
- //steps = 6
- var numberOfSteps = function(num) {
-    let steps = 0;
-    while (num != 0) {
-        num = num % 2 === 0 ? num / 2 : num - 1
-        steps++
+ //index = 0
+ //arr = [3,4,5,1] (4)
+ //i = 1
+ //arr[index] 3
+ //arr[i] 4
+ var peakIndexInMountainArray = function(arr) {
+    let index = 0
+    for (let i = 1; i < arr.length; i++) {
+        if (arr[index] < arr[i]) index = i
     }
-
-    return steps
+    return index
 };
